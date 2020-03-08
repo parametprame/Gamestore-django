@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+
+<div class="container my-5">
+    <div class="row p-2 ml-3">
+            <div class="col-8 "></div>
+            <div class="col-4 ">
+                <form class="form-inline float-right">
+                    <input class="form-control mr-sm-2 " type="search" placeholder="ค้นหาจากชื่อ หรือ ผู้พัฒนา"
+                        aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-3" type="submit">Search</button>
+                </form>
+            </div>
+                <h1 style="text-align:left; width: 49%; display:inline-block;">Action</h1>
+                <a style="text-align:right; width: 29%; display:inline-block;" href="#" class="mt-4">See more</a>
+
+        <div class="col-10">
+        {% if  user.is_authenticated %}
+            <a href ="{% url 'user' %}">
+                <div class="col-sm-2  m-2" style="display: inline-block;">
+                    <div class="card" style="width: 9rem; height: 18rem;">
+                        <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-weight-bold">Game name</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+        {% if user.is_anonymous  %}
+             <div class="col-sm-2  m-2" style="display: inline-block;">
+                    <div class="card" style="width: 9rem; height: 18rem;">
+                        <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-weight-bold">Game name</p>
+                        </div>
+                    </div>
+                </div>
+        {% endif %}
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_2.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <p class="text-info">Fillter</p>
+            <hr>
+            <div class="checkbox">
+                <label><input type="checkbox" name="" id=""> Action</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="" id=""> Adventure</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="" id=""> Puzzle</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="" id=""> Racing</label>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------- -->
+    <div class="row p-2 ml-3">
+                <h1 style="text-align:left; width: 49%; display:inline-block;">Advanger</h1>
+                <a style="text-align:right; width: 29%; display:inline-block;" href="#" class="mt-4">See more</a>
+
+        <div class="col-10">
+            <div class="col-sm-2  m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem; height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------------------------------- -->
+    <div class="row p-2 ml-3">
+            <h1 style="text-align:left; width: 49%; display:inline-block;">Puzzle</h1>
+            <a style="text-align:right; width: 29%; display:inline-block;" href="#" class="mt-4">See more</a>
+
+    <div class="col-10">
+        <div class="col-sm-2  m-2" style="display: inline-block;">
+            <div class="card" style="width: 9rem; height: 18rem;">
+                <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text  font-weight-bold">Game name</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 m-2" style="display: inline-block;">
+            <div class="card" style="width: 9rem;  height: 18rem;">
+                <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">Game name</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 m-2" style="display: inline-block;">
+            <div class="card" style="width: 9rem;  height: 18rem;">
+                <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">Game name</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 m-2" style="display: inline-block;">
+            <div class="card" style="width: 9rem;  height: 18rem;">
+                <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">Game name</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 m-2" style="display: inline-block;">
+            <div class="card" style="width: 9rem;  height: 18rem;">
+                <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text font-weight-bold">Game name</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------------------------------------ -->
+        <h1 style="text-align:left; width: 49%; display:inline-block;">Racing</h1>
+                <a style="text-align:right; width: 29%; display:inline-block;" href="#" class="mt-4">See more</a>
+
+        <div class="col-10">
+            <a href ="{% url 'user' %}">
+                <div class="col-sm-2  m-2" style="display: inline-block;">
+                    <div class="card" style="width: 9rem; height: 18rem;">
+                        <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text font-weight-bold">Game name</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_2.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 m-2" style="display: inline-block;">
+                <div class="card" style="width: 9rem;  height: 18rem;">
+                    <img class="card-img-top" src="{% static '/img/ac_1.png'%}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text font-weight-bold">Game name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock  %}

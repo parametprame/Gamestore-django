@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+<div class="container">       
+        <center><img class="mb-4 mt-3" src="{% static '/img/game.png'%}" alt="" width="72" height="72"></center> 
+        <center><h1 class="h3 mb-3 font-weight-normal m-4">Create your account</h1></center>
+        
+        <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="fname" class="sr-only">Firstname</label>
+                    <input type="text"  class="form-control my-4" placeholder="Firstname" required="" autofocus="" name="firstname">
+                </div>
+                <div class="col-sm-4">
+                    <label for="Lname" class="sr-only">Lastname</label>
+                    <input type="text"  class="form-control my-4" placeholder="Lastname" required="" autofocus="" name="lastname">
+                </div> 
+                <div class="col-sm-4">
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email"  class="form-control my-4" placeholder="Email address" required="" autofocus="" name="email">
+                </div>
+                <div class="col-sm-6">
+                    <label for="inputUsername" class="sr-only">Username</label>
+                    <input type="username"  class="form-control my-4" placeholder="Username" required="" autofocus="" name="username">
+                </div>
+                <div class="col-sm-6">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password"  class="form-control my-4" placeholder="Password" required="" name="password">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block my-4" type="submit">Register</button>
+
+            </div>
+
+        </form>
+    </div>
+{% endblock  %}

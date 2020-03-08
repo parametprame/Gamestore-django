@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+
+<div class="container">       
+    <div class="row">
+        <div class="imgpho col-md-12 m-2" style="background-color: black; width: 100%; height: 30vw;">
+            <!-- ใส่ปกเกม -->
+        </div>
+
+        <div class="imggame col-md-2 m-2 my-2 mt-2"  style="background-color: black; width: 100%; height: 10vw;">
+            <!-- ไว้ใส่รูปเกม  -->
+        </div>
+        <div class="imggame col-md-3 m-2 my-2 mt-2">
+            <h2>Game Name</h2>
+        </div>
+
+        <div class=" col-md-6 m-4 mt-5 text-right">
+            <h5 class="mx-4">1,000</h5>
+            <a href= "{% url 'login' %}"  class="btn btn-outline-dark my-1 bg-muted">Buynow</a>
+        </div>
+
+        <div class=" col-md-2 m-2 my-1 mt-5">
+            <b><p>About Game</p></b>
+        </div>
+
+        <div class=" col-md-3 m-2 my-1 mt-5 text-right">
+            
+            <b><p class="text-center">Developer</p></b>
+            <p class="text-center">Parametprame</p>
+
+            <b><p class="text-center my-2">Tags</p></b>
+            <p class="text-center">blaaaaaaa</p>
+        </div>
+
+        <div class=" col-md-3 m-2 my-1 mt-5 text-right">
+            <b><p class="text-center">Publisher</p></b>
+            <p class="text-center">Parametprame Company</p>
+
+            <b><p class="text-center my-2">Rating</p></b>
+            <p class="text-center">Everyone 10+</p>
+        </div>
+
+        <div class=" col-md-3 m-2 my-1 mt-5 text-right">
+            <b><p class="text-center">Release Date</p></b>
+            <p class="text-center">20/12/2542</p>
+        </div>
+
+        
+    
+    
+    
+    
+    </div>         
+
+</div>
+{% endblock  %}
