@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+
+<div class="container">
+    <div class="row p-2 ml-2">
+        <div class="col-md-10">
+            <form action="{% url 'search' %}" method="GET" class="form-inline">
+            {% csrf_token %}
+                    <div class="form-group mx-sm-2 mb-2">
+                        <input type="text" class="form-control" name="search" placeholder="Search...">
+                    </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <p class="text-info">Fillter</p>
+                <hr>
+                {% for gt in gameall %}
+                <form action="{% url 'filter' %}" method="GET" class="form-inline">
+                    <div class="checkbox">
+                        <label><input type="checkbox" onclick="this.form.submit()" name="{{gt.type_name}}"><span class="ml-1">{{gt.type_name}}</span></label>
+                    </div>
+                </form>
+                {% endfor %}
+            </form>
+        </div>
+        {% for gt in gamety %}
+            <h1 style="text-align:left; width: 49%; display:inline-block;">{{gt.type_name}}</h1>
+            <a style="text-align:right; width: 29%; display:inline-block;" href="{% url 'home' %}" class="mt-4">Back</a>
+        <div class="col-10">
+                {% for gm in game|slice:":7"%}
+                    {% if gm.game_type_id.id == gt.id %}
+                        {% for im in img %}
+                            {% if im.game_id.id == gm.id %}
+                                <a href="{% url 'gamedetail' gm.id %}">
+                                <div class="card shadow rounded mt-2" style="width: 13rem; height: 35vh; display:inline-block;">
+                                    <img class="card-img-top" src="{{ im.img_url.url }}" alt="Card imagecap" />
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="card-title text-center h6 font-weight-bolder">{{ gm.name }}</p>
+                                        <p class="card-title text-center h6 text-dark">Developer Team</p>
+                                        <small class="card-title text-center h6 text-dark">{{ gm.developer }}</small>
+                                    </div>
+                                </div>
+                                </a>
+                            {% endif %}
+                        {% endfor %}                 
+                    {% endif %}
+                {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock  %}

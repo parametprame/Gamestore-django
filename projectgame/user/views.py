@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def user(request):
-    return render(request, 'user/gamestore.html')
+    return render(request, 'user/gamedtail.html')

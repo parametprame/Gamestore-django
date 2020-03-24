@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'projectgame.wsgi.application'
 DATABASES = {
         'default': {
                     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                    'NAME': 'gamestore',
+                    'NAME': 'pramedatabase2',
                     'USER': 'postgres',
                     'PASSWORD': '1234',
                     'HOST': 'localhost',
@@ -130,3 +130,6 @@ STATICFILE_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 LOGIN_URL = "/nonregister/login.html"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

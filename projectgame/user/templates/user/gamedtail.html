@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+
+<div class="container">       
+    <div class="row shadow-sm p-3 mb-5 bg-white rounded justify-content-center">
+        <img src="{{ img_pk.img_url.url }}" width="40%" class="d-block" alt="">
+    </div>
+    <div class="row shadow p-3 mb-5 bg-white rounded">
+        <div class="col-md-3">
+            <img src="{{ img_pk.img_url.url }}"  width="100%" class="text-center" alt="">
+        </div>
+        <div class="col-md-6 text-center">
+            <p>{{ game_pk.name }}</p>
+        </div>
+        <div class="col-md-3 text-right">
+            <h5 class="mx-4">{{ game_pk.price }}</h5>
+            
+            
+            {% if  perms.nonregister.add_user_game %}
+                {% if user.is_superuser %}
+                <a href= "{% url 'drop_game' game_pk.id %}"  class="btn btn-outline-dark my-1 bg-muted">ลบเกม</a>
+                <a href= "{% url 'game_modify' game_pk.id %}"  class="btn btn-outline-dark my-1 bg-muted">แก้ไขเกม</a>
+                {% elif user %}
+                <a href= "{% url 'payment' game_pk.id %}"  class="btn btn-outline-dark my-1 bg-muted">Buynow</a>
+                {% endif %}
+            {% else %}
+                <a href= "{% url 'login' %}"  class="btn btn-outline-dark my-1 bg-muted">Buynow</a>
+            {% endif %}
+        </div>
+        <div class="col-md-4 mt-5 text-left">
+            <b><h3 class="">About this game</h3></b>
+        </div>
+        <div class="col-md-4  mt-5 text-center">         
+            <b><p class="text-center">Developer</p></b>
+            <p class="text-center">{{ game_pk.developer }}</p>
+            <b><p class="text-center">Tags</p></b>
+            <p class="text-center">{{ game_pk.game_type_id.type_name}}</p>
+        </div>
+        <div class="col-md-4 mt-5">
+            <b><p class="text-center">Rating</p></b>
+            <p class="text-center">{{ game_pk.rating }}</p>
+            <b><p class="text-center">Release Date</p></b>
+            <p class="text-center">{{ game_pk.release_date }}</p>
+        </div>
+        <div class=" col-md-12 m-2 my-1 mt-5 text-center">
+            <b><p class="text-center">{{ game_pk.description }}</p></b>
+        </div>   
+        
+    </div>
+    <div class="row shadow-none p-2 mb-5 bg-light rounded"></div>
+        <!-- <div class="col-md-3 text-center">
+            <b><h3 class="">About this game</h3></b>
+        </div>
+        <div class="col-md-3 text-center">         
+            <b><p class="text-center">Developer</p></b>
+            <p class="text-center">{{ game_pk.developer }}</p>
+            <b><p class="text-center">Tags</p></b>
+            <p class="text-center">{{ game_pk.game_type_id.type_name}}</p>
+        </div>
+        <div class="col-md-3">
+            <b><p class="text-center">Rating</p></b>
+            <p class="text-center">{{ game_pk.rating }}</p>
+            <b><p class="text-center">Release Date</p></b>
+            <p class="text-center">{{ game_pk.release_date }}</p>
+        </div>
+        <div class=" col-md-12 m-2 my-1 mt-5 text-center">
+            <b><p class="text-center">{{ game_pk.description }}</p></b>
+        </div>    -->
+    </div>         
+</div>
+{% endblock  %}

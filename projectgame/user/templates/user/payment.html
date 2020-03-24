@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="col-md-12 order-md-1">
+    <div class="row shadow-sm p-3 mb-5 bg-white rounded justify-content-center">
+        <img src="{{ img_pk.img_url.url }}" width="40%" class="d-block" alt="">
+    </div>
+    <h1 class="mb-3 text-center">{{game_pk.name}}</h1>
+    <img src="{{ image.image_url.url }}" class="rounded mx-auto d-block" style="width:100%">
+    <form class="need-validation" novalidate>
+    </form>
+    <h3 class="mb-3">Payment</h3>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">Credit card</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">Debit card</label>
+      </div>
+      <div class="form-check disabled">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+        <label class="form-check-label" for="exampleRadios3">Paypal</label>
+      </div>
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label for="cc-name">Name of card</label>
+              <input type="text" class="form-control" id="cc-name">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Credit card number</label>
+            <input type="text" class="form-control" id="cc-name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="cc-expiration">Expiration</label>
+            <input type="text" class="form-control" id="cc-expiration">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="cc-expiration">CVV</label>
+            <input type="text" class="form-control" id="cc-expiration">
+        </div>
+      </div>
+    <div class="col-md-12 text-center mt-2"> 
+        <p class="h2">Total Price {{ game_pk.price }}</p>
+        <a type="submit" class="btn btn-primary" href="{% url 'afterpayment' game_pk.id %}">confirm</a>
+    </div>
+</div>
+
+{% endblock  %}
